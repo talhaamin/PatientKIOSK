@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HealthKIOSKModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Merged" Type="bit" />
+          <Property Name="FirstName" Type="varchar" MaxLength="20" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="20" />
+          <Property Name="LastName" Type="varchar" MaxLength="20" />
+          <Property Name="Title" Type="varchar" MaxLength="10" />
+          <Property Name="Address1" Type="varchar" MaxLength="50" />
+          <Property Name="Address2" Type="varchar" MaxLength="50" />
+          <Property Name="Address3" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="30" />
+          <Property Name="State" Type="varchar" MaxLength="10" />
+          <Property Name="Zip" Type="varchar" MaxLength="10" />
+          <Property Name="CountryId" Type="char" MaxLength="3" />
+          <Property Name="DOB" Type="date" />
+          <Property Name="SSN" Type="char" MaxLength="9" />
+          <Property Name="HomePhone" Type="varchar" MaxLength="16" />
+          <Property Name="MobilePhone" Type="varchar" MaxLength="16" />
+          <Property Name="WorkPhone" Type="varchar" MaxLength="16" />
+          <Property Name="Fax" Type="varchar" MaxLength="16" />
+          <Property Name="EMail" Type="varchar" MaxLength="60" />
+          <Property Name="PreferredLanguageId" Type="smallint" />
+          <Property Name="GenderId" Type="smallint" />
+          <Property Name="RaceId" Type="smallint" />
+          <Property Name="EthnicityId" Type="smallint" />
+          <Property Name="MaritalStatusId" Type="smallint" />
+          <Property Name="AddressB1" Type="varchar" MaxLength="50" />
+          <Property Name="AddressB2" Type="varchar" MaxLength="50" />
+          <Property Name="AddressB3" Type="varchar" MaxLength="50" />
+          <Property Name="CityB" Type="varchar" MaxLength="30" />
+          <Property Name="StateB" Type="varchar" MaxLength="10" />
+          <Property Name="ZipB" Type="varchar" MaxLength="10" />
+          <Property Name="CountryIdB" Type="char" MaxLength="3" />
+          <Property Name="IsPregnant" Type="bit" />
+          <Property Name="PatientId_Pregnancy" Type="bigint" />
+          <Property Name="Ncpdp_id" Type="bigint" />
+          <Property Name="ExternalId" Type="varchar" MaxLength="20" />
+          <Property Name="Employed" Type="bit" />
+          <Property Name="PharmacyId" Type="bigint" />
+          <Property Name="ProviderId_Created" Type="bigint" />
+          <Property Name="DateCreated" Type="smalldatetime" />
+          <Property Name="ProviderId_Modified" Type="bigint" />
+          <Property Name="DateModified" Type="smalldatetime" />
+          <Property Name="ProviderId_Deactivated" Type="bigint" />
+          <Property Name="DateDeactivated" Type="smalldatetime" />
+          <Property Name="PortalId" Type="bigint" />
+          <Property Name="IncompleteRegistration" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="HealthKIOSKModelStoreContainer">
+          <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HealthKIOSKModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="PatientId" />
+          </Key>
+          <Property Name="PatientId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Merged" Type="Boolean" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Precision="0" />
+          <Property Name="SSN" Type="String" MaxLength="9" FixedLength="true" Unicode="false" />
+          <Property Name="HomePhone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="MobilePhone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="WorkPhone" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="Fax" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="EMail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PreferredLanguageId" Type="Int16" />
+          <Property Name="GenderId" Type="Int16" />
+          <Property Name="RaceId" Type="Int16" />
+          <Property Name="EthnicityId" Type="Int16" />
+          <Property Name="MaritalStatusId" Type="Int16" />
+          <Property Name="AddressB1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressB2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressB3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CityB" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="StateB" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ZipB" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CountryIdB" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="IsPregnant" Type="Boolean" />
+          <Property Name="PatientId_Pregnancy" Type="Int64" />
+          <Property Name="Ncpdp_id" Type="Int64" />
+          <Property Name="ExternalId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Employed" Type="Boolean" />
+          <Property Name="PharmacyId" Type="Int64" />
+          <Property Name="ProviderId_Created" Type="Int64" />
+          <Property Name="DateCreated" Type="DateTime" Precision="0" />
+          <Property Name="ProviderId_Modified" Type="Int64" />
+          <Property Name="DateModified" Type="DateTime" Precision="0" />
+          <Property Name="ProviderId_Deactivated" Type="Int64" />
+          <Property Name="DateDeactivated" Type="DateTime" Precision="0" />
+          <Property Name="PortalId" Type="Int64" />
+          <Property Name="IncompleteRegistration" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="HealthKIOSKEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HealthKIOSKModelStoreContainer" CdmEntityContainer="HealthKIOSKEntities">
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="HealthKIOSKModel.Patient">
+              <MappingFragment StoreEntitySet="Patient">
+                <ScalarProperty Name="PatientId" ColumnName="PatientId" />
+                <ScalarProperty Name="Merged" ColumnName="Merged" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="Address3" ColumnName="Address3" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="SSN" ColumnName="SSN" />
+                <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+                <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="EMail" ColumnName="EMail" />
+                <ScalarProperty Name="PreferredLanguageId" ColumnName="PreferredLanguageId" />
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="RaceId" ColumnName="RaceId" />
+                <ScalarProperty Name="EthnicityId" ColumnName="EthnicityId" />
+                <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
+                <ScalarProperty Name="AddressB1" ColumnName="AddressB1" />
+                <ScalarProperty Name="AddressB2" ColumnName="AddressB2" />
+                <ScalarProperty Name="AddressB3" ColumnName="AddressB3" />
+                <ScalarProperty Name="CityB" ColumnName="CityB" />
+                <ScalarProperty Name="StateB" ColumnName="StateB" />
+                <ScalarProperty Name="ZipB" ColumnName="ZipB" />
+                <ScalarProperty Name="CountryIdB" ColumnName="CountryIdB" />
+                <ScalarProperty Name="IsPregnant" ColumnName="IsPregnant" />
+                <ScalarProperty Name="PatientId_Pregnancy" ColumnName="PatientId_Pregnancy" />
+                <ScalarProperty Name="Ncpdp_id" ColumnName="Ncpdp_id" />
+                <ScalarProperty Name="ExternalId" ColumnName="ExternalId" />
+                <ScalarProperty Name="Employed" ColumnName="Employed" />
+                <ScalarProperty Name="PharmacyId" ColumnName="PharmacyId" />
+                <ScalarProperty Name="ProviderId_Created" ColumnName="ProviderId_Created" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="ProviderId_Modified" ColumnName="ProviderId_Modified" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="ProviderId_Deactivated" ColumnName="ProviderId_Deactivated" />
+                <ScalarProperty Name="DateDeactivated" ColumnName="DateDeactivated" />
+                <ScalarProperty Name="PortalId" ColumnName="PortalId" />
+                <ScalarProperty Name="IncompleteRegistration" ColumnName="IncompleteRegistration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
